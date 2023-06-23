@@ -51,9 +51,6 @@ resource "aws_lambda_function" "autospotting" {
       TERMINATION_NOTIFICATION_ACTION          = var.autospotting_termination_notification_action
     }
   }
-  depends_on = [
-    docker_registry_image.destination,
-  ]
 }
 
 data "aws_iam_policy_document" "lambda_policy" {

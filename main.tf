@@ -15,11 +15,6 @@ data "aws_arn" "permissions_boundary" {
 }
 
 
-data "aws_iam_role" "existing" {
-  count = var.use_existing_iam_role ? 1 : 0
-  name  = split("/", data.aws_arn.role_arn[0].resource)[1]
-}
-
 data "aws_subnet" "existing" {
   count = length(var.existing_subnets)
   id    = var.existing_subnets[count.index]

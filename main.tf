@@ -122,7 +122,7 @@ resource "aws_cloudwatch_event_rule" "cloudwatch_frequency" {
 
 resource "aws_cloudwatch_log_group" "log_group_autospotting" {
   name              = "/aws/lambda/${module.label.id}"
-  retention_in_days = 7
+  retention_in_days = 365
 }
 
 # Elastic Beanstalk policy
